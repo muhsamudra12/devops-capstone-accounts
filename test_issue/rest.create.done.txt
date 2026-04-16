@@ -1,0 +1,9 @@
+Prompt:
+Invoke-RestMethod -Uri http://localhost:8080/accounts -Method Post -Body '{"name":"Budi", "email":"budi@email.com", "address":"Semarang"}' -ContentType "application/json"
+
+PS D:\customer-accounts> Invoke-RestMethod -Uri http://localhost:8080/accounts -Method Post -Body '{"name":"Budi", "email":"budi@email.com", "address":"Semarang"}' -ContentType "application/json"
+respon:
+
+id name
+-- ----
+ 1 Budi

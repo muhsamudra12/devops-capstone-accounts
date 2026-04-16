@@ -1,0 +1,8 @@
+ Prompt:
+ Invoke-RestMethod -Uri http://localhost:8080/accounts/1 -Method Delete
+
+
+PS D:\customer-accounts> Invoke-RestMethod -Uri http://localhost:8080/accounts/1 -Method Delete
+respon:
+
+(empty)
