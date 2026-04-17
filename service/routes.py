@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request, make_response
 from service.models import Account
+from flask_talisman import Talisman
 
 app = Flask(__name__)
 
