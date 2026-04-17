@@ -3,7 +3,7 @@ from service.models import Account
 from flask_talisman import Talisman
 
 app = Flask(__name__)
-Talisman(app)
+Talisman(app, force_https=False)
 
 @app.route("/accounts", methods=["POST"])
 def create_accounts():
