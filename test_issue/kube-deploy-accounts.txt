@@ -1,0 +1,13 @@
+D:\customer-accounts>kubectl get all
+NAME                                    READY   STATUS    RESTARTS   AGE
+pod/customer-accounts-96cf46c88-wh8n9   1/1     Running   0          21s
+
+NAME                        TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+service/customer-accounts   ClusterIP   10.96.40.222   <none>        8080/TCP   15s
+service/kubernetes          ClusterIP   10.96.0.1      <none>        443/TCP    7m48s
+
+NAME                                READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/customer-accounts   1/1     1            1           21s
+
+NAME                                          DESIRED   CURRENT   READY   AGE
+replicaset.apps/customer-accounts-96cf46c88   1         1         1       21s

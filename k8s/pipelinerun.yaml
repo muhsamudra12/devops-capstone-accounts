@@ -1,0 +1,17 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: customer-accounts-run-
+spec:
+  pipelineRef:
+    name: customer-accounts-pipeline
+  serviceAccountName: pipeline-account
+  workspaces:
+    - name: pipeline-workspace
+      persistentVolumeClaim:
+        claimName: pipelinerun-pvc
+  params:
+    - name: repo-url
+      value: "https://github.com/muhsamudra12/devops-capstone-accounts"
+    - name: branch
+      value: "main"

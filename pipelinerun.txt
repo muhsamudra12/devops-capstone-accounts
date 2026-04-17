@@ -1,4 +1,25 @@
 # Customer Accounts Microservice
-![Build Status](https://github.com/USERNAME/REPO_NAME/actions/workflows/ci-build.yaml/badge.svg)
+![Build Status](https://github.com/muhsamudra12/devops-capstone-accounts)
 
 This project is a microservice to manage customer account data.
+
+
+
+D:\customer-accounts>kubectl get pods -n tekton-pipelines
+NAME                                         READY   STATUS    RESTARTS   AGE
+tekton-events-controller-7bb8d8b8cc-2q4kx    1/1     Running   0          10m
+tekton-pipelines-controller-f5b46dd7-w8rkb   1/1     Running   0          10m
+tekton-pipelines-webhook-6659bdfd6d-mxl48    1/1     Running   0          10m
+
+D:\customer-accounts>kubectl get svc -n tekton-pipelines
+NAME                          TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)                              AGE
+tekton-events-controller      ClusterIP   10.96.51.117   <none>        9090/TCP,8008/TCP,8080/TCP           11m
+tekton-pipelines-controller   ClusterIP   10.96.21.157   <none>        9090/TCP,8008/TCP,8080/TCP           11m
+tekton-pipelines-webhook      ClusterIP   10.96.129.81   <none>        9090/TCP,8008/TCP,443/TCP,8080/TCP   11m
+
+D:\customer-accounts>kubectl create -f k8s/pipelinerun.yaml
+pipelinerun.tekton.dev/customer-accounts-run-qfrjt created
+
+D:\customer-accounts>kubectl get pipelinerun
+NAME                          SUCCEEDED   REASON               STARTTIME   COMPLETIONTIME
+customer-accounts-run-qfrjt   False       CouldntGetPipeline   2m          2m

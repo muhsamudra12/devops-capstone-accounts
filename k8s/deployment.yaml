@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-accounts
+  labels:
+    app: customer-accounts
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customer-accounts
+  template:
+    metadata:
+      labels:
+        app: customer-accounts
+    spec:
+      containers:
+        - name: customer-accounts
+          image: customer-accounts:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DATABASE_URI
+              value: "sqlite:///test.db"

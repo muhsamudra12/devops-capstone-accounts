@@ -1,4 +1,9 @@
+"""Module containing the Account model"""
+
+
 class Account:
+
+    """Class representing a Customer Account"""
     data = []
     index = 0
 
