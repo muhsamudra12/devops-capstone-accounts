@@ -31,4 +31,4 @@ jobs:
       - name: Run unit tests with nose
         run: |
           export PYTHONPATH=$PYTHONPATH:$(pwd)
-          python -m nose --with-spec --spec-color 
+          python -m nose
